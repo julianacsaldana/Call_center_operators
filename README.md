@@ -1,4 +1,4 @@
-#  Análisis de Eficiencia de Agentes – CallMeMaybe Telecom
+#  Análisis de Eficiencia de Agentes – Call center
 
 ##  Descripción del Proyecto
 Análisis de la eficiencia operativa de agentes en un call center de telecomunicaciones. El objetivo es identificar operadores de bajo rendimiento mediante KPIs de productividad, evaluar la calidad del servicio al cliente y validar hipótesis estadísticas sobre el comportamiento de las llamadas por plan tarifario.
