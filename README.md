@@ -1,94 +1,108 @@
-#  Análisis de Eficiencia de Agentes – Call center
+# Call Center Agent Efficiency Analysis – Call center
 
-##  Descripción del Proyecto
-Análisis de la eficiencia operativa de agentes en un call center de telecomunicaciones. El objetivo es identificar operadores de bajo rendimiento mediante KPIs de productividad, evaluar la calidad del servicio al cliente y validar hipótesis estadísticas sobre el comportamiento de las llamadas por plan tarifario.
-
----
-
-##  Objetivos
-- Identificar agentes con bajo rendimiento según AHT y volumen de llamadas
-- Analizar la calidad del servicio: llamadas atendidas, no atendidas y tiempo de espera
-- Evaluar diferencias estadísticas en llamadas perdidas entre planes tarifarios A, B y C
-- Comparar tiempos de espera entre llamadas entrantes y salientes
+##  Project Description
+Analysis of the operational efficiency of agents in a telecommunications call center. The objective is to identify low-performing operators using productivity KPIs, evaluate customer service quality, and validate statistical hypotheses about call behavior by rate plan.
 
 ---
 
-##  Herramientas y Librerías
+## 🎯 Objectives
+- Identify low-performing agents based on AHT and call volume
+- Analyze service quality: answered calls, unanswered calls, and wait time
+- Evaluate statistical differences in missed calls between rate plans A, B, and C
+- Compare wait times between inbound and outbound calls
 
-| Librería | Uso |
+---
+##📌 Problem
+CallMeMaybe needed to identify underperforming operators and understand service quality based on the following KPIs:
+- Incoming and outgoing call loss rate
+- Average Handle Time (AHT) per customer call
+- Number of calls answered
+- Agent response time
+- Number of times a customer called on the same day
+---
+## 🛠️ Tools and Libraries
+
+| Library | Usage |
 |---|---|
-| `Pandas` | Manipulación y limpieza de datos |
-| `NumPy` | Operaciones numéricas |
-| `Matplotlib / Seaborn` | Visualización de KPIs y rankings |
-| `SciPy` | Pruebas estadísticas T-test y ANOVA |
-| `Statsmodels` | Prueba de Tukey para comparación múltiple |
+| `Pandas` | Data manipulation and cleaning |
+| `NumPy` | Numerical operations |
+| `Matplotlib / Seaborn` | KPI visualization and rankings |
+| `SciPy` | Statistical tests: T-test and ANOVA |
+| `Statsmodels` | Tukey test for multiple comparisons |
 
 ---
 
-##  Metodología
+## 📐 Methodology
 
-### 1. Limpieza de Datos
-- Conversión de columnas de fecha a formato datetime
-- Reemplazo de valores nulos en `operator_id` con 0 para identificar llamadas no atendidas
-- Eliminación de duplicados considerando `user_id`, `date`, `direction` y `total_call_duration`
+### 1. Data Cleaning
+- Conversion of date columns to datetime format
+- Replacement of null values in `operator_id` with 0 to identify unanswered calls
+- Removal of duplicates considering `user_id`, `date`, `direction`, and `total_call_duration`
 
-### 2. Análisis Exploratorio de Datos (EDA)
+### 2. Exploratory Data Analysis (EDA)
 
-####  Distribución por Plan Tarifario
-Histogramas de adquisición de clientes para los planes A, B y C por fecha de inicio.
+####  Distribution by Rate Plan
+Histograms of customer acquisition for plans A, B, and C by start date.
+  <img width="705" height="1221" alt="image" src="https://github.com/user-attachments/assets/9101a653-fdf8-40c4-abd0-115f89649832" />
 
-####  Calidad del Servicio
-Análisis mensual de tres categorías de atención:
+#### Service Quality
+Monthly analysis of three service categories:
 
-| Categoría | Descripción |
+| Category | Description |
 |---|---|
-| Sin servicio | Cliente no fue atendido en ninguna llamada |
-| Primera llamada | Cliente fue atendido en el primer intento |
-| Más de una llamada | Cliente tuvo que llamar varias veces en el mismo día |
+| No service | Customer was not answered on any call |
+| First call | Customer was answered on the first attempt |
+| More than one call | Customer had to call multiple times on the same day |
 
-####  Tiempo de Espera Promedio por Mes
+First-call resolution improved consistently from August through November, reflecting ongoing operational gains.
 
-| Mes | Tiempo de Espera Promedio |
+| !<img width="580" height="453" alt="image" src="https://github.com/user-attachments/assets/d68d322d-ae88-4347-b1fe-7b3e8a403e09" />
+| !<img width="580" height="453" alt="image" src="https://github.com/user-attachments/assets/f418114c-3ff5-4e8a-98c5-d420b4e126b2" />
+ | !<img width="619" height="453" alt="image" src="https://github.com/user-attachments/assets/1d3c0d3e-106c-4bb1-9c74-5ff3613bba80" />
+ |
+####  Average Wait Time per Month
+
+| Month | Average Wait Time |
 |---|---|
-| Agosto | 402 segundos |
-| Septiembre | 348 segundos |
-| Octubre | 321 segundos |
-| Noviembre | 240 segundos |
+| August | 402 seconds |
+| September | 348 seconds |
+| October | 321 seconds |
+| November | 240 seconds |
 
-####  Ranking de Agentes
-Clasificación de operadores por:
-- **AHT (Average Handle Time):** Tiempo total acumulado de atención
-- **Porcentaje de llamadas atendidas** sobre el total del período
+####  Agent Ranking
+Operator classification by:
+- **AHT (Average Handle Time):** Total accumulated handling time
+- **Percentage of calls answered** out of the total for the period
 
-### 3. Pruebas Estadísticas
+### 3.  Statistical Tests
 
 ####  ANOVA + Tukey
-**Hipótesis:** ¿Existe diferencia significativa en la tasa de llamadas perdidas entre los planes A, B y C?
-- Se aplicó ANOVA de una vía y prueba post-hoc de Tukey para comparaciones múltiples entre grupos.
+**Hypothesis:** Is there a significant difference in the missed call rate between plans A, B, and C?
+- One-way ANOVA and post-hoc Tukey test were applied for multiple comparisons between groups.
 
-####  T-test Independiente
-**Hipótesis:** ¿La duración promedio de llamadas entrantes es igual a las salientes?
-- Se compararon distribuciones de duración entre llamadas `in` y `out`.
+####  Independent T-test
+**Hypothesis:** Is the average duration of inbound calls equal to that of outbound calls?
+- Duration distributions were compared between `in` and `out` calls.
 
-####  T-test Pareado
-**Hipótesis:** ¿El tiempo de espera promedio es igual entre todos los meses?
-- Se compararon tiempos de espera de llamadas entrantes vs salientes por mes.
+####  Paired T-test
+**Hypothesis:** Is the average wait time equal across all months?
+- Wait times of inbound vs outbound calls were compared by month.
+
+---
+##  Key Findings
+- Most customers are answered on the **first call**, indicating overall efficiency in reception
+- The highest wait times are concentrated in **August and September**, improving toward the end of the year
+- It is uncommon for a customer to call more than once on the same day
+- There are statistically significant differences in missed calls between rate plans
 
 ---
 
-## 📊 Hallazgos Principales
-- La mayoría de los clientes son atendidos en la **primera llamada**, lo que indica eficiencia general en la recepción
-- Los tiempos de espera más altos se concentran en **agosto y septiembre**, mejorando hacia fin de año
-- No es común que un cliente llame más de una vez en el mismo día
-- Existen diferencias estadísticamente significativas en llamadas perdidas entre planes tarifarios
+## ✅ Recommendations
+- Reinforce agent allocation in August and September to reduce wait times
+- Design an improvement plan for operators identified in the low-performance ranking
+- Review the rate plan with the highest missed call rate and implement service improvements
+- Monitor AHT per agent monthly as a productivity indicator
 
 ---
-
-## ✅ Recomendaciones
-- Reforzar la asignación de agentes en agosto y septiembre para reducir tiempos de espera
-- Diseñar plan de mejora para operadores identificados en el ranking de bajo rendimiento
-- Revisar el plan tarifario con mayor tasa de llamadas perdidas e implementar mejoras de atención
-- Monitorear mensualmente el AHT por agente como indicador de productividad
-
 ---
 om
