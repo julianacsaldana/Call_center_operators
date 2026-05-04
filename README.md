@@ -56,11 +56,13 @@ Monthly analysis of three service categories:
 
 First-call resolution improved consistently from August through November, reflecting ongoing operational gains.
 
-| !<img width="580" height="453" alt="image" src="https://github.com/user-attachments/assets/d68d322d-ae88-4347-b1fe-7b3e8a403e09" />
-| !<img width="580" height="453" alt="image" src="https://github.com/user-attachments/assets/f418114c-3ff5-4e8a-98c5-d420b4e126b2" />
- | !<img width="619" height="453" alt="image" src="https://github.com/user-attachments/assets/1d3c0d3e-106c-4bb1-9c74-5ff3613bba80" />
+| <img width="580" height="453" alt="image" src="https://github.com/user-attachments/assets/d68d322d-ae88-4347-b1fe-7b3e8a403e09" />
+| <img width="580" height="453" alt="image" src="https://github.com/user-attachments/assets/f418114c-3ff5-4e8a-98c5-d420b4e126b2" />
+| <img width="619" height="453" alt="image" src="https://github.com/user-attachments/assets/1d3c0d3e-106c-4bb1-9c74-5ff3613bba80" />
  |
 ####  Average Wait Time per Month
+Waiting time dropped 40.3% from August to November — a strong signal of improved operator efficiency over the analysis period.
+<img width="711" height="511" alt="image" src="https://github.com/user-attachments/assets/3c2fdd0d-d39e-4d81-94bd-9706120c5a63" />
 
 | Month | Average Wait Time |
 |---|---|
@@ -71,29 +73,46 @@ First-call resolution improved consistently from August through November, reflec
 
 ####  Agent Ranking
 Operator classification by:
-- **AHT (Average Handle Time):** Total accumulated handling time
-- **Percentage of calls answered** out of the total for the period
+1. Low-performing operators (sorted ascending by AHT % and calls %):
+- Some operators handled only 1 call with abnormally low AHT  requires investigation (possible inactivity or logging issues).
+- Others handled a moderate number of calls but had disproportionately high AHT, suggesting slow resolution times.
+
+2. High-performing operators (sorted descending):
+- Concentrated a higher share of total calls with competitive AHT percentages.
+- These operators represent the benchmark for service efficiency.
 
 ### 3.  Statistical Tests
 
-####  ANOVA + Tukey
+####  Hypothesis 1 — Missed Call Rate by Tariff Plan (ANOVA + Tukey) 
 **Hypothesis:** Is there a significant difference in the missed call rate between plans A, B, and C?
 - One-way ANOVA and post-hoc Tukey test were applied for multiple comparisons between groups.
+- Plan C showed the greatest difference in missed call behavior compared to both A and B. Clients on Plan C may be receiving a different level of service, or their call volume patterns differ significantly.
 
-####  Independent T-test
+####  Independent T-test Inbound vs. Outbound Call Duration
 **Hypothesis:** Is the average duration of inbound calls equal to that of outbound calls?
 - Duration distributions were compared between `in` and `out` calls.
+- Inbound and outbound calls have statistically different durations. This suggests the nature of the interaction (customer-initiated vs. company-initiated) significantly affects how long calls last — relevant for operator scheduling and AHT targets.
 
-####  Paired T-test
+####  Paired T-test Average Waiting Time Across Months
 **Hypothesis:** Is the average wait time equal across all months?
 - Wait times of inbound vs outbound calls were compared by month.
+- The 40.3% reduction in waiting time from August to November is statistically significant not due to chance. This confirms a real operational improvement over the period analyzed.
 
 ---
 ##  Key Findings
-- Most customers are answered on the **first call**, indicating overall efficiency in reception
-- The highest wait times are concentrated in **August and September**, improving toward the end of the year
-- It is uncommon for a customer to call more than once on the same day
-- There are statistically significant differences in missed calls between rate plans
+## 📊 Key Findings
+
+- **Service efficiency improved month over month** → First-call resolution rose from a baseline in August to 5,233 users in November (+12.3% vs October), while waiting time dropped 40.3% over the same period.
+
+- **Waiting time is too high in early months** → August's average of 402 seconds (~6.7 min) is a critical pain point. Reducing this to November levels (240 sec) should be the operational benchmark going forward.
+
+- **Plan C users experience significantly more missed calls** → Both ANOVA and Tukey HSD confirmed Plan C differs from A and B. A targeted review of service allocation for Plan C clients is recommended.
+
+- **Call duration differs by direction** → Inbound and outbound calls have statistically different durations, requiring separate AHT benchmarks for each call type.
+
+- **Operator performance is uneven** → Some low-performing operators handled only 1 call across the entire period, while others showed high AHT relative to peers. Targeted coaching or workload redistribution is needed.
+
+- **Calling more than once in the same day is rare** → This confirms that, in most cases, issues are resolved on first contact — a positive indicator for overall service quality.
 
 ---
 
