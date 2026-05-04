@@ -127,5 +127,4 @@ Operator classification by:
 - Monitor AHT per agent monthly as a productivity indicator
 
 ---
----
-om
+
