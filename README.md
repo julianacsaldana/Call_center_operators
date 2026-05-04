@@ -39,13 +39,15 @@ CallMeMaybe needed to identify underperforming operators and understand service 
 - Replacement of null values in `operator_id` with 0 to identify unanswered calls
 - Removal of duplicates considering `user_id`, `date`, `direction`, and `total_call_duration`
 
-### 2. Exploratory Data Analysis (EDA)
+### 2. **Exploratory Data Analysis (EDA)**
 
-####  Distribution by Rate Plan
+####  **Distribution by Rate Plan** 
+
 Histograms of customer acquisition for plans A, B, and C by start date.
+
   <img width="705" height="1221" alt="image" src="https://github.com/user-attachments/assets/9101a653-fdf8-40c4-abd0-115f89649832" />
 
-#### Service Quality
+#### **Service Quality**
 Monthly analysis of three service categories:
 
 | Category | Description |
@@ -60,8 +62,11 @@ First-call resolution improved consistently from August through November, reflec
 | <img width="580" height="453" alt="image" src="https://github.com/user-attachments/assets/f418114c-3ff5-4e8a-98c5-d420b4e126b2" />
 | <img width="619" height="453" alt="image" src="https://github.com/user-attachments/assets/1d3c0d3e-106c-4bb1-9c74-5ff3613bba80" />
  |
-####  Average Wait Time per Month
+ 
+####  **Average Wait Time per Month**
+
 Waiting time dropped 40.3% from August to November — a strong signal of improved operator efficiency over the analysis period.
+
 <img width="711" height="511" alt="image" src="https://github.com/user-attachments/assets/3c2fdd0d-d39e-4d81-94bd-9706120c5a63" />
 
 | Month | Average Wait Time |
@@ -99,7 +104,6 @@ Operator classification by:
 - The 40.3% reduction in waiting time from August to November is statistically significant not due to chance. This confirms a real operational improvement over the period analyzed.
 
 ---
-##  Key Findings
 ## 📊 Key Findings
 
 - **Service efficiency improved month over month** → First-call resolution rose from a baseline in August to 5,233 users in November (+12.3% vs October), while waiting time dropped 40.3% over the same period.
