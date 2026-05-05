@@ -12,7 +12,7 @@ Analysis of the operational efficiency of agents in a telecommunications call ce
 - Compare wait times between inbound and outbound calls
 
 ---
-##📌 Problem##
+## 📌 Problem
 CallMeMaybe needed to identify underperforming operators and understand service quality based on the following KPIs:
 - Incoming and outgoing call loss rate
 - Average Handle Time (AHT) per customer call
