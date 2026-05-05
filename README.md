@@ -106,17 +106,17 @@ Operator classification by:
 ---
 ## 📊 Key Findings
 
-- **Service efficiency improved month over month** → First-call resolution rose from a baseline in August to 5,233 users in November (+12.3% vs October), while waiting time dropped 40.3% over the same period.
+- **Service efficiency improved month over month**  First-call resolution rose from a baseline in August to 5,233 users in November (+12.3% vs October), while waiting time dropped 40.3% over the same period.
 
-- **Waiting time is too high in early months** → August's average of 402 seconds (~6.7 min) is a critical pain point. Reducing this to November levels (240 sec) should be the operational benchmark going forward.
+- **Waiting time is too high in early months**  August's average of 402 seconds (~6.7 min) is a critical pain point. Reducing this to November levels (240 sec) should be the operational benchmark going forward.
 
-- **Plan C users experience significantly more missed calls** → Both ANOVA and Tukey HSD confirmed Plan C differs from A and B. A targeted review of service allocation for Plan C clients is recommended.
+- **Plan C users experience significantly more missed calls** Both ANOVA and Tukey HSD confirmed Plan C differs from A and B. A targeted review of service allocation for Plan C clients is recommended.
 
-- **Call duration differs by direction** → Inbound and outbound calls have statistically different durations, requiring separate AHT benchmarks for each call type.
+- **Call duration differs by direction**  Inbound and outbound calls have statistically different durations, requiring separate AHT benchmarks for each call type.
 
-- **Operator performance is uneven** → Some low-performing operators handled only 1 call across the entire period, while others showed high AHT relative to peers. Targeted coaching or workload redistribution is needed.
+- **Operator performance is uneven** Some low-performing operators handled only 1 call across the entire period, while others showed high AHT relative to peers. Targeted coaching or workload redistribution is needed.
 
-- **Calling more than once in the same day is rare** → This confirms that, in most cases, issues are resolved on first contact — a positive indicator for overall service quality.
+- **Calling more than once in the same day is rare** This confirms that, in most cases, issues are resolved on first contact  a positive indicator for overall service quality.
 
 ---
 
